@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="jcore.js"></script>
+    <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico" />
+    <title>Document</title>
+    <style>
+        :root {
+            --background: rgb(218, 215, 169);
+            --text: rgb(15, 15, 15);
+            --accent: #EFD;
+            --accent-seethrough: #EFD2;
+        }
+
+        body {
+            /* background: url("img/dark-forest-hires.jpg"); */
+            background: url("img/grainyforest.jpg");
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+            background-color: var(--background);
+            color: var(--text);
+        }
+
+        main {
+            max-width: 90ch;
+            backdrop-filter: blur(0.5em);
+            box-shadow: 0 0 2em black;
+            background-color: var(--background);
+            color: var(--text);
+
+        }
+
+
+        div.toolbar {
+            background-color: var(--background);
+            line-height: 0;
+            position: relative;
+        }
+
+        .primary {
+            text-align: center;
+        }
+    </style>
+</head>
+
+
+<body>
+    <div class="toolbar">
+        <!-- <a href="index.html"><img src="img/amog.ico" width=50em;></a> -->
+        <a class="header" href="index.html">Home</a>
+        <a class="header" href="journal.html">Journal</a>
+        <a class="header" href="music.html">Music</a>
+        <a class="header" href="art.html">Art</a>
+        <a class="header" href="about.html">About</a>
+    </div>
+    <main>
+        <main>
+            <div class="intro">
+                <h1>Journal</h1><br>
+                <h3>Last Updated:</h3>
+                <h3 style="color: blue">1/5/2023</h3>
+            </div>
+            <hr class="fold">
+            <div class="primary">
+                <h2>Beginnings</h2>
+                <p style="justify-content:space-around;">Evening travellers, I decided to give website dev another shot.
+                    Last time was pretty lame, just copy and pasted code for an easy assignment. This time, I want to
+                    put acutal effort in, and learn more about css despite how mind numbing it can become when staring
+                    at for hours on end. So far I have a pretty simple layout but I'm just happy it's going in a
+                    direction I wanted. Well anyways, I better take a break from this shit, "Nope" the movie just
+                    finished downloading and I'm hungry, thanks for reading, peace! </p>
+
+            </div>
+        </main>
+
+<script>
+    $(document).ready(function() {
+        $.getJSON("Journal/journal.json", function(data) 
+        { 
+            console.log(data);
+            var posts = data["posts"];
+            posts.array.forEach(post => {
+                
+            });
+        })        
+    });
+
+</script>
+</body>
+
+</html>
+
+

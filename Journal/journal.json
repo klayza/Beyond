@@ -1,0 +1,14 @@
+{
+    "posts": [
+        {
+            "title": "Japan!",
+            "body": "<p>I am going to japan in a few weeks!</p>",
+            "images": [
+                {
+                    "path": "Journal/img/985373.jpg",
+                    "caption": "A picture of a cute ramen shop I saw while sightseeing"
+                }
+            ]
+        }
+    ]
+}
