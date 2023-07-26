@@ -9,15 +9,20 @@
     <link rel="shortcut icon" type="image/x-icon" href="img/logo.ico" />
     <script src="jcore.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <!-- <script src="src/jquery.min.js"></script> -->
+    <!-- <link rel="stylesheet" href="src/fontawesome.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.css">
+    <script src="src/jquery.richtext.min.js"></script>
+    <link rel="stylesheet" href="src/richtext.min.css">
+    <!-- Quill js -->
     <!-- <script src="https://cdn.quilljs.com/1.3.7/quill.js"></script> -->
     <!-- <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet"> -->
-
-
-    <link rel="canonical" href="https://quilljs.com/standalone/full/">
+    <!-- Quill css -->
+    <!-- <link rel="canonical" href="https://quilljs.com/standalone/full/">
     <link rel="stylesheet" href="//cdn.quilljs.com/1.3.6/quill.snow.css">
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/monokai-sublime.min.css">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/KaTeX/0.7.1/katex.min.css"> -->
+    <title>Quill</title>
     <style>
         :root {
             --background: rgba(245, 245, 245, 0.3);
@@ -75,7 +80,218 @@
     </main>
     <main class="small">
         <label>Title</label><input id="titleInput" type="text">
+        <input type="file" id="fileToUpload" name="fileToUpload">
+        <input id="uploadButton" type="submit" value="Upload Image" name="submit">
     </main>
+    <main class="mainQuillEditor" style="margin-bottom: 200px; margin-top: 15px;">
+        <textarea id="editor"></textarea>
+        <button id="submit-btn">Submit</button>
+    </main>
+    <script>
+        $(document).ready(function () {
+
+            $('#editor').richText({
+                // text formatting
+                bold: true,
+                italic: true,
+                underline: true,
+
+                // text alignment
+                leftAlign: true,
+                centerAlign: true,
+                rightAlign: true,
+                justify: true,
+
+                // lists
+                ol: true,
+                ul: true,
+
+                // title
+                heading: true,
+
+                // fonts
+                fonts: true,
+                fontList: [
+                    "Sunflower",
+                    "Mirage",
+                    "Arial",
+                    "Arial Black",
+                    "Comic Sans MS",
+                    "Courier New",
+                    "Geneva",
+                    "Georgia",
+                    "Helvetica",
+                    "Impact",
+                    "Lucida Console",
+                    "Tahoma",
+                    "Times New Roman",
+                    "Verdana"
+                ],
+                fontColor: true,
+                backgroundColor: true,
+                fontSize: true,
+
+                // uploads
+                imageUpload: true,
+                fileUpload: true,
+
+                // media
+                videoEmbed: true,
+
+                // link
+                urls: true,
+
+                // tables
+                table: true,
+
+                // code
+                removeStyles: false,
+                code: false,
+
+                // colors
+                colors: [],
+
+                // dropdowns
+                fileHTML: '',
+                imageHTML: '',
+
+                // translations
+                translations: {
+                    'title': 'Title',
+                    'white': 'White',
+                    'black': 'Black',
+                    'brown': 'Brown',
+                    'beige': 'Beige',
+                    'darkBlue': 'Dark Blue',
+                    'blue': 'Blue',
+                    'lightBlue': 'Light Blue',
+                    'darkRed': 'Dark Red',
+                    'red': 'Red',
+                    'darkGreen': 'Dark Green',
+                    'green': 'Green',
+                    'purple': 'Purple',
+                    'darkTurquois': 'Dark Turquois',
+                    'turquois': 'Turquois',
+                    'darkOrange': 'Dark Orange',
+                    'orange': 'Orange',
+                    'yellow': 'Yellow',
+                    'imageURL': 'Image URL',
+                    'fileURL': 'File URL',
+                    'linkText': 'Link text',
+                    'url': 'URL',
+                    'size': 'Size',
+                    'responsive': 'Responsive',
+                    'text': 'Text',
+                    'openIn': 'Open in',
+                    'sameTab': 'Same tab',
+                    'newTab': 'New tab',
+                    'align': 'Align',
+                    'left': 'Left',
+                    'justify': 'Justify',
+                    'center': 'Center',
+                    'right': 'Right',
+                    'rows': 'Rows',
+                    'columns': 'Columns',
+                    'add': 'Add',
+                    'pleaseEnterURL': 'Please enter an URL',
+                    'videoURLnotSupported': 'Video URL not supported',
+                    'pleaseSelectImage': 'Please select an image',
+                    'pleaseSelectFile': 'Please select a file',
+                    'bold': 'Bold',
+                    'italic': 'Italic',
+                    'underline': 'Underline',
+                    'alignLeft': 'Align left',
+                    'alignCenter': 'Align centered',
+                    'alignRight': 'Align right',
+                    'addOrderedList': 'Ordered list',
+                    'addUnorderedList': 'Unordered list',
+                    'addHeading': 'Heading/title',
+                    'addFont': 'Font',
+                    'addFontColor': 'Font color',
+                    'addBackgroundColor': 'Background color',
+                    'addFontSize': 'Font size',
+                    'addImage': 'Add image',
+                    'addVideo': 'Add video',
+                    'addFile': 'Add file',
+                    'addURL': 'Add URL',
+                    'addTable': 'Add table',
+                    'removeStyles': 'Remove styles',
+                    'code': 'Show HTML code',
+                    'undo': 'Undo',
+                    'redo': 'Redo',
+                    'close': 'Close'
+                },
+
+                // privacy
+                youtubeCookies: false,
+
+                // preview
+                preview: false,
+
+                // placeholder
+                placeholder: '',
+
+                // developer settings
+                useSingleQuotes: false,
+                height: 0,
+                heightPercentage: 0,
+                adaptiveHeight: false,
+                id: "",
+                class: "",
+                useParagraph: true,
+                maxlength: 0,
+                maxlengthIncludeHTML: false,
+                callback: undefined,
+                useTabForNext: false
+            });
+
+            $("#submit-btn").click(function () {
+                var title = $("#titleInput").val();
+                var content = $("#editor").html();
+
+                insertJournalEntry(title, content)
+
+                console.log(title);
+                console.log(content);
+            });
+
+            function insertJournalEntry(title, content) {
+                $.ajax({
+                    url: '/Journal/journal.json',
+                    type: 'POST',
+                    data: {
+                        'title': title,
+                        'content': content
+                    },
+                    success: function (data) {
+                        console.log(data);
+                        alert(data);
+                    }
+                });
+            }
+
+            $("#uploadButton").click(function () {
+                var formData = new FormData();
+                formData.append('fileToUpload', $('input[type=file]')[0].files[0]);
+
+                $.ajax({
+                    url: '/private/main.php', // your php file
+                    type: 'POST',
+                    data: formData,
+                    processData: false,  // tell jQuery not to process the data
+                    contentType: false,  // tell jQuery not to set contentType
+                    success: function (data) {
+                        console.log(data);
+                        alert(data);
+                    }
+                });
+            })
+        });
+    </script>
+</body>
+
+</html>
+<!-- 
     <main class="mainQuillEditor" style="margin-bottom: 200px; margin-top: 15px;">
         <div id="standalone-container">
             <div id="toolbar-container" class="ql-toolbar ql-snow">
@@ -413,46 +629,7 @@
             });
         </script>
     <button id="submit-btn">Submit</button>
-    <script>
-        $("#submit-btn").click(function() {
-            var title = $("#titleInput").val();
-            var content = quill.root.innerHTML;
-            
-            console.log(title);
-        });
-
-    </script>
 </main>
-</body>
-
-</html>
 
 
-
-    <!-- <main>
-        <div id="editor">
-
-        </div>
-        <button id="submit-btn" type="submit">Submit</button>
-        <button id="insert-image-btn" type="button">Insert Image</button>
-    </main>
-    <script>
-        var quill = new Quill('#editor', {
-            theme: 'snow' // Specify the theme, e.g., 'snow' or 'bubble'
-        });
-
-        $("#submit-btn").click(function() {
-            var content = quill.root.innerHTML;
-            console.log(content);
-        });
-
-        // $("#insert-image-btn").click(function() {
-        //     var url = prompt("Enter the URL of the image:");
-        //     if (url) {
-        //         var range = quill.getSelection();
-        //         quill.insertEmbed(range.index, 'image', url, Quill.sources.USER);
-        //     }
-        // });
-
-    </script>
-</body> -->
+ -->

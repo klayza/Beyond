@@ -1,14 +1,6 @@
-{
-    "posts": [
-        {
-            "title": "Japan!",
-            "body": "<p>I am going to japan in a few weeks!</p>",
-            "images": [
-                {
-                    "path": "Journal/img/985373.jpg",
-                    "caption": "A picture of a cute ramen shop I saw while sightseeing"
-                }
-            ]
-        }
-    ]
-}
+[
+    {
+        "title": "Stress Test",
+        "content": "<p align=\"center\">This is a test gauging how jhtml css will interfere with incoming entries:<\/p><p align=\"center\"><b>Bold! <\/b><i>Italic <\/i><u>Underline<\/u><br>Ordered list (centered (centered doesn't work...))<\/p><ol><li align=\"center\"><u>Number 1<\/u><\/li><li align=\"center\"><u>Number 2<\/u><\/li><li align=\"center\"><u>Number 3<\/u><\/li><li align=\"center\"><u>Overflow OL going all the way to the rightttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt<\/u><\/li><\/ol><p>Unordered list<\/p><ul><li>Number 1<\/li><li>Number 2<\/li><li>Number 3<\/li><\/ul><h1 align=\"left\">Heading 1 (centered works for some reason now? Nevermind)<\/h1><p><h2>Heading 2<\/h2><span style=\"font-size:12px;\"><br><\/span><\/p><p><span style=\"font-size:12px;\">Normal text font-size 12<\/span><\/p><p><span style=\"font-size:12px;\"><span style=\"font-size:18px;\">Normal font size is at 18px<\/span><br><\/span><p>Image test:<\/p><p><p><img src=\"https:\/\/cw1a.net\/Journal\/img\/photomode_23112022_225233.png\" style=\"cursor: default;\"><\/p>Video test:<\/p><p><br><br><div class=\"videoEmbed\" style=\"position:relative;height:0;padding-bottom:56.25%\"><iframe src=\"https:\/\/www.youtube-nocookie.com\/embed\/O8GUH0_htRM?ecver=2\" style=\"position:absolute;width:100%;height:100%;left:0\" webkitallowfullscreen=\"\" mozallowfullscreen=\"\" allowfullscreen=\"\" width=\"640\" height=\"360\" frameborder=\"0\"><\/iframe><\/div><br>Link test:&nbsp;<a href=\"https:\/\/developer.mozilla.org\/en-US\/docs\/Web\/HTTP\/Status\/405?utm_source=mozilla&amp;utm_medium=devtools-netmonitor&amp;utm_campaign=default\" target=\"_blank\">totally not malicious!<\/a><\/p><p><br><br><\/p><br><\/p><p><br><\/p><p><br><\/p><p><br><\/p>"
+    }
+]

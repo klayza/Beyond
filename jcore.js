@@ -3,17 +3,6 @@
 // }
 
 
-function processJournalEntry(newEntry) {
-    // Potentially extract image elements from content and replace with a url. 
-    // Images will be uploaded seperately to webhost
-}
-
-function insertJournalEntry(newEntry) {
-    getJournal().done(function(data) {
-        data.posts.push(newEntry); // Add the new entry
-        updateJournal(data); // Update the JSON file
-    });
-}
 
 // function updateJournal(updatedData) {
 //     $.ajax({
